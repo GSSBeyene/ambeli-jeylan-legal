@@ -36,7 +36,7 @@ function LawyersPage() {
                   <div><span className="uppercase tracking-[0.18em] text-foreground/60 mr-2">Focus</span>{l.focus.join(" · ")}</div>
                   <div><span className="uppercase tracking-[0.18em] text-foreground/60 mr-2">Languages</span>{l.languages.join(" · ")}</div>
                 </div>
-                <Link to="/book" search={{}} className="mt-6 inline-flex text-sm font-medium text-navy hover:text-accent">
+                <Link to="/book" className="mt-6 inline-flex text-sm font-medium text-navy hover:text-accent">
                   Book with {l.name.split(" ")[0]} →
                 </Link>
               </div>
