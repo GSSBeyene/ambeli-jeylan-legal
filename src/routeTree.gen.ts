@@ -24,6 +24,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
+import { Route as AuthenticatedAdminTasksIndexRouteImport } from './routes/_authenticated/admin.tasks.index'
 import { Route as AuthenticatedAdminCasesIndexRouteImport } from './routes/_authenticated/admin.cases.index'
 import { Route as AuthenticatedAdminCasesCaseIdRouteImport } from './routes/_authenticated/admin.cases.$caseId'
 
@@ -101,6 +102,12 @@ const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthenticatedAdminRoute,
 } as any)
+const AuthenticatedAdminTasksIndexRoute =
+  AuthenticatedAdminTasksIndexRouteImport.update({
+    id: '/tasks/',
+    path: '/tasks/',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminCasesIndexRoute =
   AuthenticatedAdminCasesIndexRouteImport.update({
     id: '/cases/',
@@ -131,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/admin/': typeof AuthenticatedAdminIndexRoute
   '/admin/cases/$caseId': typeof AuthenticatedAdminCasesCaseIdRoute
   '/admin/cases/': typeof AuthenticatedAdminCasesIndexRoute
+  '/admin/tasks/': typeof AuthenticatedAdminTasksIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -148,6 +156,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AuthenticatedAdminIndexRoute
   '/admin/cases/$caseId': typeof AuthenticatedAdminCasesCaseIdRoute
   '/admin/cases': typeof AuthenticatedAdminCasesIndexRoute
+  '/admin/tasks': typeof AuthenticatedAdminTasksIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -168,6 +177,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_authenticated/admin/cases/$caseId': typeof AuthenticatedAdminCasesCaseIdRoute
   '/_authenticated/admin/cases/': typeof AuthenticatedAdminCasesIndexRoute
+  '/_authenticated/admin/tasks/': typeof AuthenticatedAdminTasksIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -188,6 +198,7 @@ export interface FileRouteTypes {
     | '/admin/'
     | '/admin/cases/$caseId'
     | '/admin/cases/'
+    | '/admin/tasks/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -205,6 +216,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admin/cases/$caseId'
     | '/admin/cases'
+    | '/admin/tasks'
   id:
     | '__root__'
     | '/'
@@ -224,6 +236,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/'
     | '/_authenticated/admin/cases/$caseId'
     | '/_authenticated/admin/cases/'
+    | '/_authenticated/admin/tasks/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -349,6 +362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/tasks/': {
+      id: '/_authenticated/admin/tasks/'
+      path: '/tasks'
+      fullPath: '/admin/tasks/'
+      preLoaderRoute: typeof AuthenticatedAdminTasksIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/cases/': {
       id: '/_authenticated/admin/cases/'
       path: '/cases'
@@ -370,12 +390,14 @@ interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
   AuthenticatedAdminCasesCaseIdRoute: typeof AuthenticatedAdminCasesCaseIdRoute
   AuthenticatedAdminCasesIndexRoute: typeof AuthenticatedAdminCasesIndexRoute
+  AuthenticatedAdminTasksIndexRoute: typeof AuthenticatedAdminTasksIndexRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
   AuthenticatedAdminCasesCaseIdRoute: AuthenticatedAdminCasesCaseIdRoute,
   AuthenticatedAdminCasesIndexRoute: AuthenticatedAdminCasesIndexRoute,
+  AuthenticatedAdminTasksIndexRoute: AuthenticatedAdminTasksIndexRoute,
 }
 
 const AuthenticatedAdminRouteWithChildren =
