@@ -15,6 +15,7 @@ function AdminLayout() {
   const [checking, setChecking] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [email, setEmail] = useState<string>("");
+  const [uid, setUid] = useState<string>("");
 
   useEffect(() => {
     (async () => {
