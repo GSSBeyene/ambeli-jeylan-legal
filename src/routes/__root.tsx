@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { I18nProvider } from "@/lib/i18n";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { QuoteTicker } from "@/components/site/QuoteTicker";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -126,6 +127,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
         <div className="flex min-h-screen flex-col">
+          <QuoteTicker />
           <Header />
           <main className="flex-1">
             <Outlet />
