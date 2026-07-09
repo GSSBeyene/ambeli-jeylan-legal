@@ -127,6 +127,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
         <div className="flex min-h-screen flex-col">
+          <QuoteTicker />
           <Header />
           <main className="flex-1">
             <Outlet />
