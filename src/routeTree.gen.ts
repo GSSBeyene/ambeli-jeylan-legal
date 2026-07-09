@@ -24,6 +24,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
+import { Route as AuthenticatedAdminCasesIndexRouteImport } from './routes/_authenticated/admin.cases.index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -99,6 +100,12 @@ const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthenticatedAdminRoute,
 } as any)
+const AuthenticatedAdminCasesIndexRoute =
+  AuthenticatedAdminCasesIndexRouteImport.update({
+    id: '/cases/',
+    path: '/cases/',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/admin/': typeof AuthenticatedAdminIndexRoute
+  '/admin/cases/': typeof AuthenticatedAdminCasesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -130,6 +138,7 @@ export interface FileRoutesByTo {
   '/practice-areas': typeof PracticeAreasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
+  '/admin/cases': typeof AuthenticatedAdminCasesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -148,6 +157,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
+  '/_authenticated/admin/cases/': typeof AuthenticatedAdminCasesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -166,6 +176,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin'
     | '/admin/'
+    | '/admin/cases/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -181,6 +192,7 @@ export interface FileRouteTypes {
     | '/practice-areas'
     | '/sitemap.xml'
     | '/admin'
+    | '/admin/cases'
   id:
     | '__root__'
     | '/'
@@ -198,6 +210,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/_authenticated/admin'
     | '/_authenticated/admin/'
+    | '/_authenticated/admin/cases/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -323,15 +336,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/cases/': {
+      id: '/_authenticated/admin/cases/'
+      path: '/cases'
+      fullPath: '/admin/cases/'
+      preLoaderRoute: typeof AuthenticatedAdminCasesIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
   }
 }
 
 interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+  AuthenticatedAdminCasesIndexRoute: typeof AuthenticatedAdminCasesIndexRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+  AuthenticatedAdminCasesIndexRoute: AuthenticatedAdminCasesIndexRoute,
 }
 
 const AuthenticatedAdminRouteWithChildren =
