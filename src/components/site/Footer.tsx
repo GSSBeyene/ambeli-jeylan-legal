@@ -72,6 +72,7 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-accent">{t("footer.privacy")}</a>
             <a href="#" className="hover:text-accent">{t("footer.terms")}</a>
+            <a href="/auth" className="hover:text-accent">Staff</a>
           </div>
         </div>
       </div>
