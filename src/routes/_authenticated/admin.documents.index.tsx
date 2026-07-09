@@ -55,7 +55,8 @@ function DocumentsPage() {
     });
   }
 
-  const kindLabel = { notice: "Legal Notice", judgment: "Judgment / Ruling", letter: "Formal Letter" }[kind];
+  const kindLabels: Record<DocKind, string> = { notice: "Legal Notice", judgment: "Judgment / Ruling", letter: "Formal Letter" };
+  const kindLabel = kindLabels[kind];
 
   return (
     <div className="space-y-6">
