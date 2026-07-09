@@ -20,9 +20,10 @@ function AdminLayout() {
   useEffect(() => {
     (async () => {
       const { data: userData } = await supabase.auth.getUser();
-      const uid = userData.user?.id;
+      const uidLocal = userData.user?.id;
       setEmail(userData.user?.email ?? "");
-      if (!uid) {
+      setUid(uidLocal ?? "");
+      if (!uidLocal) {
         navigate({ to: "/auth" });
         return;
       }
