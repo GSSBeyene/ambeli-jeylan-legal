@@ -59,7 +59,7 @@ function AdminLayout() {
             the <code className="rounded bg-secondary px-1">admin</code> role.
           </p>
           <p className="mt-3 text-xs text-muted-foreground">
-            Your user id: <code className="break-all">{}</code>
+            Your user id: <code className="break-all">{uid}</code>
           </p>
           <button
             onClick={signOut}
