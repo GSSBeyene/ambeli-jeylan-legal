@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import logo from "@/assets/logo.png";
 
 export function Header() {
   const { t } = useI18n();
@@ -23,9 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="container-page flex h-20 items-center justify-between gap-6">
         <Link to="/" className="group flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-navy text-accent shadow-sm">
-            <span className="font-serif text-xl tracking-tight">AJ</span>
-          </div>
+          <img src={logo} alt={t("brand.name")} className="h-11 w-11 object-contain" />
           <div className="hidden sm:block">
             <div className="font-serif text-base leading-tight text-foreground">
               {t("brand.name")}

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { CONTACT } from "@/lib/site-data";
 import { Facebook, Linkedin, Send } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   const { t } = useI18n();
@@ -10,9 +11,7 @@ export function Footer() {
       <div className="container-page py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-navy text-accent">
-              <span className="font-serif text-xl">AJ</span>
-            </div>
+            <img src={logo} alt={t("brand.name")} className="h-11 w-11 object-contain bg-white/5 rounded-sm p-1" />
             <div>
               <div className="font-serif text-lg">{t("brand.name")}</div>
               <div className="text-[10px] uppercase tracking-[0.22em] text-accent">
