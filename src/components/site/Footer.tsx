@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { CONTACT, SOCIALS } from "@/lib/site-data";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { Facebook, Linkedin, Send, Instagram, Youtube, Twitter, Music2 } from "lucide-react";
 import logo from "@/assets/logo.png";
 
