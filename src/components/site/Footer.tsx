@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
-import { CONTACT } from "@/lib/site-data";
-import { Facebook, Linkedin, Send } from "lucide-react";
+import { CONTACT, SOCIALS } from "@/lib/site-data";
+import { Facebook, Linkedin, Send, Instagram, Youtube, Twitter, Music2 } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export function Footer() {
@@ -32,11 +32,26 @@ export function Footer() {
             >
               <Send className="h-4 w-4" />
             </a>
-            <a href="#" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="Facebook">
+            <a href={SOCIALS.facebook} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="Facebook">
               <Facebook className="h-4 w-4" />
             </a>
-            <a href="#" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="LinkedIn">
+            <a href={SOCIALS.linkedin} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="LinkedIn">
               <Linkedin className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.instagram} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="Instagram">
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.tiktok} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="TikTok">
+              <Music2 className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.telegram} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="Telegram">
+              <Send className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.youtube} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="YouTube">
+              <Youtube className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.twitter} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="X (Twitter)">
+              <Twitter className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -56,7 +71,9 @@ export function Footer() {
           <div className="font-serif text-sm uppercase tracking-[0.2em] text-accent">Contact</div>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
             <li>{CONTACT.address}</li>
-            <li>{CONTACT.phone}</li>
+            {CONTACT.phones.map((p) => (
+              <li key={p}><a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-accent">{p}</a></li>
+            ))}
             <li>
               <a href={`mailto:${CONTACT.email}`} className="hover:text-accent">{CONTACT.email}</a>
             </li>
