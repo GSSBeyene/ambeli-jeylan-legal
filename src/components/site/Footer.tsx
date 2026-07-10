@@ -73,7 +73,10 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
             <li>{CONTACT.address}</li>
             {CONTACT.phones.map((p) => (
-              <li key={p}><a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-accent">{p}</a></li>
+              <li key={p} className="flex flex-wrap items-center gap-2">
+                <a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-accent">{p}</a>
+                <WhatsAppButton phone={p} compact className="border-white/15 text-primary-foreground/75 hover:text-accent" />
+              </li>
             ))}
             <li>
               <a href={`mailto:${CONTACT.email}`} className="hover:text-accent">{CONTACT.email}</a>
