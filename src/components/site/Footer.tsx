@@ -32,11 +32,26 @@ export function Footer() {
             >
               <Send className="h-4 w-4" />
             </a>
-            <a href="#" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="Facebook">
+            <a href={SOCIALS.facebook} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="Facebook">
               <Facebook className="h-4 w-4" />
             </a>
-            <a href="#" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="LinkedIn">
+            <a href={SOCIALS.linkedin} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="LinkedIn">
               <Linkedin className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.instagram} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="Instagram">
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.tiktok} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="TikTok">
+              <Music2 className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.telegram} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="Telegram">
+              <Send className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.youtube} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="YouTube">
+              <Youtube className="h-4 w-4" />
+            </a>
+            <a href={SOCIALS.twitter} target="_blank" rel="noreferrer" className="rounded-sm border border-white/15 p-2 hover:border-accent hover:text-accent transition" aria-label="X (Twitter)">
+              <Twitter className="h-4 w-4" />
             </a>
           </div>
         </div>
