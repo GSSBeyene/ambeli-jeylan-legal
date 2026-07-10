@@ -74,6 +74,7 @@ export function Footer() {
             {CONTACT.phones.map((p) => (
               <li key={p}><a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-accent">{p}</a></li>
             ))}
+            <li>
               <a href={`mailto:${CONTACT.email}`} className="hover:text-accent">{CONTACT.email}</a>
             </li>
             <li><Link to="/book" className="hover:text-accent">{t("nav.book")}</Link></li>
