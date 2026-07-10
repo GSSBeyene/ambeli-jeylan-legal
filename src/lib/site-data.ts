@@ -69,11 +69,22 @@ export const TESTIMONIALS = [
 ] as const;
 
 export const CONTACT = {
-  phone: "+251 11 000 0000",
-  emergency: "+251 91 000 0000",
+  phone: "+251 911 746 221",
+  phones: ["+251 911 746 221", "+251 977 117 782", "+251 977 111 202"],
+  emergency: "+251 977 111 202",
   email: "info@ambelijeylan.law",
   address: "Bole Sub-city, Africa Avenue, Addis Ababa, Ethiopia",
-  whatsapp: "+251910000000",
+  whatsapp: "+251911746221",
+} as const;
+
+export const SOCIALS = {
+  facebook: "#",
+  linkedin: "#",
+  instagram: "#",
+  tiktok: "#",
+  telegram: "#",
+  youtube: "#",
+  twitter: "#",
 } as const;
 
 export const APPOINTMENT_TIMES = [
