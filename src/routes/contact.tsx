@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CONTACT } from "@/lib/site-data";
 import { useI18n } from "@/lib/i18n";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { PageHeader } from "./about";
 import { Mail, MapPin, Phone, Clock, Siren } from "lucide-react";
 
