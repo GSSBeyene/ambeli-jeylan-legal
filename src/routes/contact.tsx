@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CONTACT } from "@/lib/site-data";
 import { useI18n } from "@/lib/i18n";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { PageHeader } from "./about";
 import { Mail, MapPin, Phone, Clock, Siren } from "lucide-react";
 
@@ -44,6 +45,16 @@ function ContactPage() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-10">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">WhatsApp</div>
+            <p className="mt-2 text-sm text-muted-foreground">Start a chat directly from your phone.</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {CONTACT.phones.map((p) => (
+                <WhatsAppButton key={p} phone={p} />
+              ))}
+            </div>
+          </div>
         </div>
         <div className="rounded-sm overflow-hidden border border-border aspect-[4/3]">
           <iframe
