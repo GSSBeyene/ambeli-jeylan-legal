@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
-import { CONTACT } from "@/lib/site-data";
-import { Facebook, Linkedin, Send } from "lucide-react";
+import { CONTACT, SOCIALS } from "@/lib/site-data";
+import { Facebook, Linkedin, Send, Instagram, Youtube, Twitter, Music2 } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export function Footer() {
