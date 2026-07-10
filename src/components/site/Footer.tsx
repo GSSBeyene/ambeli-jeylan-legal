@@ -71,8 +71,9 @@ export function Footer() {
           <div className="font-serif text-sm uppercase tracking-[0.2em] text-accent">Contact</div>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
             <li>{CONTACT.address}</li>
-            <li>{CONTACT.phone}</li>
-            <li>
+            {CONTACT.phones.map((p) => (
+              <li key={p}><a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-accent">{p}</a></li>
+            ))}
               <a href={`mailto:${CONTACT.email}`} className="hover:text-accent">{CONTACT.email}</a>
             </li>
             <li><Link to="/book" className="hover:text-accent">{t("nav.book")}</Link></li>
