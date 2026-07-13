@@ -1,15 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "./about";
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 
 export const Route = createFileRoute("/careers")({
-  head: () => ({
-    meta: [
-      { title: "Careers — Ambeli Jeylan Law Office" },
-      { name: "description", content: "Join a leading Ethiopian law office. Current openings and how to apply." },
-      { property: "og:title", content: "Careers — Ambeli Jeylan Law Office" },
-      { property: "og:description", content: "Join our team of Ethiopian lawyers." },
-    ],
-    links: [{ rel: "canonical", href: "/careers" }],
+  head: ({ match }) => ({
+    meta: metaForRoute("/careers", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/careers" }, ...hreflangLinks("/careers")],
   }),
   component: () => (
     <>

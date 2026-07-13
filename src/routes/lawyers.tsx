@@ -1,16 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LAWYERS } from "@/lib/site-data";
 import { PageHeader } from "./about";
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 
 export const Route = createFileRoute("/lawyers")({
-  head: () => ({
-    meta: [
-      { title: "Our Lawyers — Ambeli Jeylan Law Office" },
-      { name: "description", content: "Meet the counsel of Ambeli Jeylan Law Office — partners and senior associates serving Ethiopian and international clients." },
-      { property: "og:title", content: "Our Lawyers — Ambeli Jeylan Law Office" },
-      { property: "og:description", content: "The lawyers behind the firm." },
-    ],
-    links: [{ rel: "canonical", href: "/lawyers" }],
+  head: ({ match }) => ({
+    meta: metaForRoute("/lawyers", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/lawyers" }, ...hreflangLinks("/lawyers")],
   }),
   component: LawyersPage,
 });

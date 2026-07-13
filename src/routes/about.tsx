@@ -1,15 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import aboutImage from "@/assets/about-signing.jpg";
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Ambeli Jeylan Law Office" },
-      { name: "description", content: "History, mission, vision and values of Ambeli Jeylan Law Office in Addis Ababa." },
-      { property: "og:title", content: "About — Ambeli Jeylan Law Office" },
-      { property: "og:description", content: "The story, mission and leadership of an Ethiopian full-service law office." },
-    ],
-    links: [{ rel: "canonical", href: "/about" }],
+  head: ({ match }) => ({
+    meta: metaForRoute("/about", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/about" }, ...hreflangLinks("/about")],
   }),
   component: AboutPage,
 });

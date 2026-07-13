@@ -1,16 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { usePracticeAreas } from "@/lib/practice-areas-i18n";
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 import { PageHeader } from "./about";
 
 export const Route = createFileRoute("/practice-areas")({
-  head: () => ({
-    meta: [
-      { title: "Practice Areas — Ambeli Jeylan Law Office" },
-      { name: "description", content: "Full-service practice: civil, commercial, corporate, investment, tax, family, immigration, IP, criminal defense, arbitration and more." },
-      { property: "og:title", content: "Practice Areas — Ambeli Jeylan Law Office" },
-      { property: "og:description", content: "Comprehensive Ethiopian and cross-border legal practice." },
-    ],
-    links: [{ rel: "canonical", href: "/practice-areas" }],
+  head: ({ match }) => ({
+    meta: metaForRoute("/practice-areas", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/practice-areas" }, ...hreflangLinks("/practice-areas")],
   }),
   component: PracticeAreasPage,
 });
