@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PRACTICE_AREAS } from "@/lib/site-data";
+import { usePracticeAreas } from "@/lib/practice-areas-i18n";
 import { PageHeader } from "./about";
 
 export const Route = createFileRoute("/practice-areas")({
@@ -16,6 +16,7 @@ export const Route = createFileRoute("/practice-areas")({
 });
 
 function PracticeAreasPage() {
+  const practiceAreas = usePracticeAreas();
   return (
     <>
       <PageHeader
@@ -25,7 +26,7 @@ function PracticeAreasPage() {
       />
       <section className="container-page py-16">
         <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3 border border-border">
-          {PRACTICE_AREAS.map((a, i) => (
+          {practiceAreas.map((a, i) => (
             <div key={a.title} className="group bg-background p-8 hover:bg-navy hover:text-primary-foreground transition-colors">
               <div className="text-xs text-accent tracking-[0.2em]">
                 {String(i + 1).padStart(2, "0")}

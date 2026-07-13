@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ScaleIcon, ShieldCheck, Landmark, Sparkles } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { PRACTICE_AREAS, LAWYERS, TESTIMONIALS } from "@/lib/site-data";
+import { LAWYERS, TESTIMONIALS } from "@/lib/site-data";
+import { usePracticeAreas } from "@/lib/practice-areas-i18n";
 import heroImage from "@/assets/hero-law.jpg";
 import aboutImage from "@/assets/about-signing.jpg";
 
@@ -11,6 +12,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const { t } = useI18n();
+  const practiceAreas = usePracticeAreas();
   return (
     <>
       {/* HERO */}
@@ -110,7 +112,7 @@ function Home() {
           </div>
 
           <div className="mt-12 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3 border border-border">
-            {PRACTICE_AREAS.slice(0, 9).map((a, i) => (
+            {practiceAreas.slice(0, 9).map((a, i) => (
               <div key={a.title} className="group bg-background p-8 hover:bg-navy hover:text-primary-foreground transition-colors">
                 <div className="text-xs text-accent tracking-[0.2em]">
                   {String(i + 1).padStart(2, "0")}
