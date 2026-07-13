@@ -6,16 +6,12 @@ import { supabase } from "@/integrations/supabase/client";
 import { useI18n } from "@/lib/i18n";
 import { PRACTICE_AREAS, LAWYERS, APPOINTMENT_TIMES } from "@/lib/site-data";
 import { PageHeader } from "./about";
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 
 export const Route = createFileRoute("/book")({
-  head: () => ({
-    meta: [
-      { title: "Book a Consultation — Ambeli Jeylan Law Office" },
-      { name: "description", content: "Request a confidential consultation with one of our lawyers. We reply within one business day." },
-      { property: "og:title", content: "Book a Consultation — Ambeli Jeylan Law Office" },
-      { property: "og:description", content: "Schedule an in-person or virtual meeting with our counsel." },
-    ],
-    links: [{ rel: "canonical", href: "/book" }],
+  head: ({ match }) => ({
+    meta: metaForRoute("/book", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/book" }, ...hreflangLinks("/book")],
   }),
   component: BookPage,
 });
