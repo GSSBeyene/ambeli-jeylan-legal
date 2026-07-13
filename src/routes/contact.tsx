@@ -4,16 +4,12 @@ import { useI18n } from "@/lib/i18n";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { PageHeader } from "./about";
 import { Mail, MapPin, Phone, Clock, Siren } from "lucide-react";
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Ambeli Jeylan Law Office" },
-      { name: "description", content: "Reach the Addis Ababa offices of Ambeli Jeylan Law Office. Address, phones, email and emergency line." },
-      { property: "og:title", content: "Contact — Ambeli Jeylan Law Office" },
-      { property: "og:description", content: "Get in touch with our Addis Ababa office." },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
+  head: ({ match }) => ({
+    meta: metaForRoute("/contact", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/contact" }, ...hreflangLinks("/contact")],
   }),
   component: ContactPage,
 });

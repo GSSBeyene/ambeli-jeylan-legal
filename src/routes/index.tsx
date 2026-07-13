@@ -6,7 +6,13 @@ import { usePracticeAreas } from "@/lib/practice-areas-i18n";
 import heroImage from "@/assets/hero-law.jpg";
 import aboutImage from "@/assets/about-signing.jpg";
 
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
+
 export const Route = createFileRoute("/")({
+  head: ({ match }) => ({
+    meta: metaForRoute("/", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/" }, ...hreflangLinks("/")],
+  }),
   component: Home,
 });
 

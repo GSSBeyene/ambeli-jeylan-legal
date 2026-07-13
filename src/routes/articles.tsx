@@ -1,15 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "./about";
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 
 export const Route = createFileRoute("/articles")({
-  head: () => ({
-    meta: [
-      { title: "Legal Articles — Ambeli Jeylan Law Office" },
-      { name: "description", content: "Analysis and commentary on Ethiopian and international legal developments from our lawyers." },
-      { property: "og:title", content: "Legal Articles — Ambeli Jeylan Law Office" },
-      { property: "og:description", content: "Analysis and commentary from our counsel." },
-    ],
-    links: [{ rel: "canonical", href: "/articles" }],
+  head: ({ match }) => ({
+    meta: metaForRoute("/articles", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/articles" }, ...hreflangLinks("/articles")],
   }),
   component: () => (
     <>

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "./about";
+import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
@@ -14,14 +15,9 @@ const FAQS = [
 ];
 
 export const Route = createFileRoute("/faqs")({
-  head: () => ({
-    meta: [
-      { title: "FAQs — Ambeli Jeylan Law Office" },
-      { name: "description", content: "Frequently asked questions about consultations, fees, languages and matters we handle." },
-      { property: "og:title", content: "FAQs — Ambeli Jeylan Law Office" },
-      { property: "og:description", content: "Answers to common questions about our services." },
-    ],
-    links: [{ rel: "canonical", href: "/faqs" }],
+  head: ({ match }) => ({
+    meta: metaForRoute("/faqs", langFromSearch((match as { search?: unknown }).search)),
+    links: [{ rel: "canonical", href: "/faqs" }, ...hreflangLinks("/faqs")],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({

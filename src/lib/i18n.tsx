@@ -695,8 +695,15 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<LangCode>("en");
 
   useEffect(() => {
-    const stored = (typeof window !== "undefined" &&
-      (localStorage.getItem("ajlo.lang") as LangCode | null)) || null;
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    const fromQuery = url.searchParams.get("lang");
+    if (fromQuery && LANGUAGES.some((l) => l.code === fromQuery)) {
+      setLangState(fromQuery as LangCode);
+      localStorage.setItem("ajlo.lang", fromQuery);
+      return;
+    }
+    const stored = localStorage.getItem("ajlo.lang") as LangCode | null;
     if (stored && LANGUAGES.some((l) => l.code === stored)) setLangState(stored);
   }, []);
 
