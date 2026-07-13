@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PRACTICE_AREAS } from "@/lib/site-data";
+import { usePracticeAreas } from "@/lib/practice-areas-i18n";
 import { PageHeader } from "./about";
 
 export const Route = createFileRoute("/practice-areas")({
