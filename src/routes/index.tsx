@@ -12,6 +12,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const { t } = useI18n();
+  const practiceAreas = usePracticeAreas();
   return (
     <>
       {/* HERO */}
