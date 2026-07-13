@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ScaleIcon, ShieldCheck, Landmark, Sparkles } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { PRACTICE_AREAS, LAWYERS, TESTIMONIALS } from "@/lib/site-data";
+import { LAWYERS, TESTIMONIALS } from "@/lib/site-data";
+import { usePracticeAreas } from "@/lib/practice-areas-i18n";
 import heroImage from "@/assets/hero-law.jpg";
 import aboutImage from "@/assets/about-signing.jpg";
 
