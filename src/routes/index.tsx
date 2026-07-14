@@ -86,13 +86,11 @@ function Home() {
       {/* VALUE PILLARS */}
       <section className="container-page py-20">
         <div className="grid gap-8 md:grid-cols-3">
-          {[
-            { icon: ScaleIcon, title: "Principled advocacy", desc: "Every matter is prepared as if it will be tried before the highest court." },
-            { icon: ShieldCheck, title: "Discreet counsel", desc: "Confidentiality and judgment expected by institutions and private clients alike." },
-            { icon: Landmark, title: "Institutional depth", desc: "Cross-disciplinary teams built around your matter, not a single practice silo." },
-          ].map((p) => (
+          {c.pillars.map((p, idx) => {
+            const Icon = [ScaleIcon, ShieldCheck, Landmark][idx] ?? ScaleIcon;
+            return (
             <div key={p.title} className="border-l-2 border-accent pl-6">
-              <p.icon className="h-6 w-6 text-accent" />
+              <Icon className="h-6 w-6 text-accent" />
               <h3 className="mt-4 font-serif text-xl">{p.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
             </div>
