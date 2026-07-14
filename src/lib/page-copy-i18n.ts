@@ -832,17 +832,390 @@ const so: PageCopy = {
   },
 };
 
+const aa: PageCopy = {
+  home: {
+    stats: [
+      { k: "20+", v: "Sanootah taama" },
+      { k: "1,200+", v: "Caagiidah lugsimte" },
+      { k: "9", v: "Afóoytek meqe" },
+      { k: "24/7", v: "Ariifachih gacsi" },
+    ],
+    pillars: [
+      { title: "Meqe falmi", desc: "Kulli caagid fayya-le mahkamah gexo-le innah tanka." },
+      { title: "Ciqbi heyto", desc: "Ciqbaa kee qellay maroh kee dabooqah esserooma." },
+      { title: "Dabooqah tuxxih", desc: "Kulli taama afaanul temeetek ni-marooti dabooqak eqbá geta." },
+    ],
+    sec: { values: "01 · Qadaayit", expertise: "02 · Taama", firm: "03 · Baxsó", counsel: "04 · Sharcih marootii", voices: "05 · Awqaqti" },
+    aboutBody: "Ambeli Jeylan Sharcih Baxsó Addis Ababah taniih duddu-le sharcih meqe le baxsó kinni. Meqe falmi kee lakqi heyto ittah tanim yaabbe qadaalatal tuftume.",
+    aboutBullets: [
+      "9 afóoytat — Amaariñña, Oromiiña, Tigriñña kee Qarabiya luk — marootuh nangele.",
+      "Kulli caagidah tekeh dabooqah teenak.",
+      "Baank-el, maalgashadaayah kee dawlat dabooqah amana-le heyto.",
+    ],
+    readStory: "Ni-caagidat akriya",
+    managingPartner: "Awki Hayti",
+    viewAllAreas: "Ummam baxsóoyta table",
+    meetTeam: "Ni-dabooqak inkih taatabaha",
+  },
+  about: {
+    eyebrow: "Baxsóh birat",
+    title: "Casri Itiyoppiyah sharcih baxsó, bugaartuh tuduure.",
+    storyTitle: "Ni-caagid",
+    storyBody: "Ambeli Jeylan Sharcih Baxsó addunyaalih sharcih meqinuh Itiyoppiyah dukut yasarafeh diinah lehteh baaxol yamaate innah tugudde.",
+    missionTitle: "Ergo",
+    missionBody: "Kulli maroh iftaa, dogorah kee sharcil temeete lehteh yasarafek heyto tacaayak.",
+    visionTitle: "Duudu",
+    visionBody: "Qafrikat cirah baxsó yakke — Itiyoppiya kee addunyaa marootii bugaartuh tugudde waqdi taatabale baxsó.",
+    valuesTitle: "Qaxxiim qadaayit",
+    values: [
+      "Duddulit gadó kaal usukut yaftite.",
+      "Qellay kee amsariife maxaayak tuftume.",
+      "Kulli maroh xagnisal ciqbi.",
+      "Sabti maxaayak sacatiyyah malaakah bugaartul yaakume meqe.",
+    ],
+    membershipsTitle: "Miseensummaa kee hayyama",
+    memberships: [
+      "Itiyoppiya Federalih Awki Mahkama",
+      "Itiyoppiya Sharcih Marootih Waldá",
+      "Itiyoppiya Ittacocotii kee Ityaaqi Rakaakayti",
+      "Addunyaalih Sharcih Marootih Waldá",
+      "Qafrikah Gadó Sharcih Netiwoorki",
+      "ICC Addunyaalih Ittacocotii Mahkama",
+    ],
+    speak: "Hayti luk yaabaay",
+    partnerRole: "Awki Hayti",
+    partnerBio: "Digduma sanoot koorporeetii marootii Itiyoppiyaa mahkaamaay addunyaalih araarah mahkaamal cakkiyyi.",
+  },
+  lawyers: {
+    eyebrow: "Sharcih marootii",
+    title: "Baxsóh derreh yaniih sharcih marootii.",
+    sub: "Ogumaa, seer-le hookal kee bugaari yaabbaanaanit alsime awki haytii kee kaadootik.",
+    focus: "Xiyyeeffannoo",
+    languages: "Afóoytak",
+    bookWith: "{name} luk ballan haysaay →",
+  },
+  contact: {
+    title: "Isin qophiyoysu waqdi anu qophi kinnini.",
+    sub: "Ciqbi essero nangele. Ambaraakat inki taama ayrót nagcá.",
+    whatsappDesc: "Ku telefoonak kalliittah yaabih qidaa.",
+    mapTitle: "Baxsóh bakka",
+  },
+  careers: {
+    eyebrow: "Taamah dagoytoo",
+    title: "Sharcih marootuh baxsóh kal qeesa.",
+    sub: "Ogumaa, seer-le hookal kee bugaartuh yaftitte sharcih maro nadóore.",
+    apply: "Iyyada",
+    roles: [
+      { role: "Awki Hayti — Gadó", loc: "Addis Ababa" },
+      { role: "Hayti — Mahkamah falmi", loc: "Addis Ababa" },
+      { role: "Sharcih leenjifame", loc: "Addis Ababa" },
+    ],
+  },
+  faqs: {
+    eyebrow: "Gaculuk",
+    title: "Faggino esserooma.",
+    items: [
+      { q: "Amaariñña kee Itiyoppiyah kalá afóoytat heyto tantunuun?", a: "Yeey. Ni-sharcih marootii Amaariñña, Oromiiña, Tigriñña, Somaliya, Qafariña, Sidaamiña, Wolayittiña, Qarabiya kee Ingiliziya marootuh yaqbudén." },
+      { q: "Yi-esseró ariifachih taakumen?", a: "Kulli ballan esseró ambaraakat inki taama ayrót naragguqe." },
+      { q: "Heyto ciqbi kinni?", a: "Yaqiini. Naharsi xagnisak yasserreh sharcih hayti-maroh ciqbi cakke." },
+      { q: "Walgé onlaynih takke duddaa?", a: "Yeey — Google Meet, Zoom, WhatsApp vidiyo kee telefoon. Baxsóh addal awasi walgé nangele." },
+      { q: "Addunyaalih marootii tantunuun?", a: "Alá maalgashadaa, addunyaalih koorporeetii kee Itiyoppiyaa kee sakarayat taamitat dabooqi lakqinuh gerinni cakkiynih." },
+      { q: "Waarayti akkanni akke?", a: "Caagidal sacatih, pirojektih hinnay riteenarah taamitna." },
+    ],
+  },
+  articles: {
+    eyebrow: "Xiinxala",
+    title: "Sharcih qaafisaa kee xiinxala.",
+    sub: "Itiyoppiyah sharcii kee gadó tagfileh birat ni-sharcih marootik uma.",
+    readMore: "Osalli akriya →",
+    body: "Itiyoppiyat taamitá dabooqoh giradah maleeny gabaabá.",
+    items: [
+      { t: "Itiyoppiyat cusub Investmentih sharci: alá maalgashadaayah maca yaykiluk", c: "Investment" },
+      { t: "Alá araarah gitit Itiyoppiyat wacyisuk", c: "Araara" },
+      { t: "Yamaadete gadó sharci tuxxih", c: "Gadó" },
+      { t: "Itiyoppiyah maaliyih dabooqoh daata dacsakan dirqamat", c: "Baank" },
+      { t: "Taamah fooyya'iyya kee cakkitte", c: "Taama" },
+      { t: "Qafrikat cirah gadó mallikatah wacyisih tarsiimoot", c: "IP" },
+    ],
+  },
+  gallery: { eyebrow: "Gaalarii", title: "Baxsó suuraatal." },
+  practice: {
+    eyebrow: "Taama",
+    title: "Kulli qaxxiim baxsóotal duddu-le heyto.",
+    sub: "Awki gadó gexoytak hanga cakkih heerah mahkamah falmih fanah.",
+    book: "Ballan haysa",
+  },
+  book: {
+    expectTitle: "Maca qambaltó",
+    expectItems: [
+      "Awki sharcih maroh yaadkarime ciqbi wacyi.",
+      "Ambaraakat inki taama ayrót naragguqé kee kalendarih qeesa.",
+      "Awasih, Google Meet, Zoom hinnay telefoonih doorti.",
+      "Amaariñña, Ingiliziya, Oromiiña, Tigriñña, Qarabiya kee kalá afóoytat tantee.",
+    ],
+  },
+};
+
+const sid: PageCopy = {
+  home: {
+    stats: [
+      { k: "20+", v: "Diri qixillo" },
+      { k: "1,200+", v: "Coyimma looxamminoha" },
+      { k: "9", v: "Afoo woshshamminoha" },
+      { k: "24/7", v: "Rakko qolte" },
+    ],
+    pillars: [
+      { title: "Halaale minaancho", desc: "Mitte mitte coyi galtete tiiddo woshshi ganyera qixxaawanno." },
+      { title: "Maaxine amaale", desc: "Dawaro egennootenna wolqu masaraahonna dandaannohu quwa." },
+      { title: "Masaraachi giddo", desc: "Coyi'nera ledo giddo egennaawaanche gaamote uyinanni." },
+    ],
+    sec: { values: "01 · Aleenna", expertise: "02 · Egenno", firm: "03 · Beeti", counsel: "04 · Seerchooti", voices: "05 · Huurra" },
+    aboutBody: "Ambeli Jeylan Seere Beeti Addis Ababa noohu, halaale minaanchonna hasiicho amaale mitte ikkanno yite tugudde beeti ledo, tunni gundo masaraa, Itoophiya masaraa hattono dawaro dawaro noota looxo ikkanno coyibba giddo egennoome uyinnano.",
+    aboutBullets: [
+      "9 afoote — Amaarigna, Oromigna, Tigrigna hattono Arabigna hasiicha — dawaraano woshshinanni.",
+      "Mitte mitte coyi'nera ledo giddo gaamote qixxeessinanni.",
+      "Baankaano, invastarra hattono ilamete masaraahoho amana noohu seerchooti.",
+    ],
+    readStory: "Coyi'nke nabbawi",
+    managingPartner: "Wossenganno Ledo",
+    viewAllAreas: "Baalanka basooti la'i",
+    meetTeam: "Gaame woloma gede la'i",
+  },
+  about: {
+    eyebrow: "Beetibba daafira",
+    title: "Diri Itoophiya seere beeti, guuti daafira qixxaawino.",
+    storyTitle: "Coyinke",
+    storyBody: "Ambeli Jeylan Seere Beeti alame egennaawaanchete seere loosi Itoophiya wolqute dirinni dooggishannohu wolqute ilameho abbate tugudde.",
+    missionTitle: "Guuta",
+    missionBody: "Baalunkuhu dawarooho leelaancho, dincho hattono seerete aleenni noota egennoome uyisa.",
+    visionTitle: "Doogo",
+    visionBody: "Afrikate Gaanfi giddo qixillonsa beeti ikka — Itoophiyaachohonna alameho dawaraano guuti hasiisannowe daafira daannoha.",
+    valuesTitle: "Xagge aleenna",
+    values: [
+      "Baalunkuhu gadoote uyinniha addaxxinanni.",
+      "Qixxeessi haasaawete aleenni.",
+      "Mitte mitte dawarira ledo maaxi.",
+      "Kaajje guuta uyinihonni, kaffali sa'ate qixxaawino ikkitino."
+    ],
+    membershipsTitle: "Miseensuboo hattono uduunnoo",
+    memberships: [
+      "Itoophiya Federaali Aleenni Firdibeeti",
+      "Itoophiya Seerchooti Godaaho",
+      "Itoophiya Araarshu hattono Sarru Marta",
+      "Alame Seerchooti Godaaho",
+      "Afrika Gadoote Seere Netiwooki",
+      "ICC Alame Araarshu Firdibeeti",
+    ],
+    speak: "Ledoho ledo haasaawi",
+    partnerRole: "Wossenganno Ledo",
+    partnerBio: "Layinki'ne dari koorporeetihonna masaraancho dawaraano Itoophiya firdibeetiho baalanka layishira hattono alame araarshu firdibeetira leellinshanni no."
+  },
+  lawyers: {
+    eyebrow: "Seerchooti",
+    title: "Beetiho aleenni noohu seerchooti.",
+    sub: "Egennoote, qulfaate hattono leellinshannoha guuta uyinno wossenganno ledotanna leddoyye seerchooti.",
+    focus: "Ayidoote",
+    languages: "Afoote",
+    bookWith: "{name} ledo galtete ganyaancho fadhi →",
+  },
+  contact: {
+    title: "Ate qixxaawinota ninke qixxaawinseemmo.",
+    sub: "Maaxinete xa'muwa adhineemmo. Mitte loosu barrira daannomo.",
+    whatsappDesc: "Silkiki'nera hemma haasaawa fadha.",
+    mapTitle: "Beeti bayicho",
+  },
+  careers: {
+    eyebrow: "Loosu qokkolla",
+    title: "Seerchootitte beeti giddo dai.",
+    sub: "Egennoote, qulfaate hattono kaajje guutaho amanamitino seerchooti hasiineemmo.",
+    apply: "Xa'mi",
+    roles: [
+      { role: "Wossenganno Ledo — Gadoote", loc: "Addis Ababa" },
+      { role: "Ledo — Firdibeeti Layishi", loc: "Addis Ababa" },
+      { role: "Seere Roshshaancho", loc: "Addis Ababa" },
+    ],
+  },
+  faqs: {
+    eyebrow: "Qolo",
+    title: "Baala hige xa'namannohu xa'muwa.",
+    items: [
+      { q: "Amaarignanna wole Itoophiya afootenni amaale uyitinanni?", a: "Ee. Ninke seerchooti Amaarigna, Oromigna, Tigrigna, Soomaligna, Afarigna, Sidaamigna, Wolayttigna, Arabigna hattono Ingilizignanni dawaraano woshshanno." },
+      { q: "Xa'mo'ya rakke qolteenna?", a: "Mitte mitte galtete ganyaanchote xa'mo mitte loosu barrira mirikkishineemmo." },
+      { q: "Galtete ganyaancho maaxineeta?", a: "Halaale. Mitte mitte xa'mo umi qonqolinni kayise seerchoot-dawarooho maaxinete cakki agarantino." },
+      { q: "Kalfoo intaneetetenni ikka dandiitannoona?", a: "Ee — Google Meet, Zoom, WhatsApp vidiyo woy silki. Beetikke Addis Ababa giddo hemmaho kalfoo dandiitanno." },
+      { q: "Alame dawaraano ledo loossitinanni?", a: "Alame invastaraano, alame koorporeeshinnanna Itoophiyaho hattono gobbate giddo loosanno masaraa amanamme leellinshanni." },
+      { q: "Kaffalluwa hiittono lawini?", a: "Coyi'na garinni sa'atete, pirojektete woy riteenaruwa garinni loosineemmo." },
+    ],
+  },
+  articles: {
+    eyebrow: "La'a",
+    title: "Seere qixxeessuwanna wori'ma.",
+    sub: "Itoophiya seerinna gadoote yannaho lossaancho fooggomma daafira seerchooti'nke amaale.",
+    readMore: "Osolo nabbawi →",
+    body: "Itoophiyaho loosanno masaraa daafira looxamme daddawa daafira kolo woridi.",
+    items: [
+      { t: "Itoophiya haaru Invastimentete seeri: alame invastaraano soqqidiro maa soorama", c: "Invastimentete" },
+      { t: "Alame araarshu murtoo Itoophiyaho woshshama", c: "Araarshu" },
+      { t: "Woshshamme no Gadoote Seeri egenna", c: "Gadoote" },
+      { t: "Itoophiya maalicho masaraaho daata agarooshshi dirqamma", c: "Baankete" },
+      { t: "Loosi fooggama hattono loosisaancho aana noota gede", c: "Loosi" },
+      { t: "Afrikate Gaanfi giddo gadoote maalliko woshshama garinni", c: "IP" },
+    ],
+  },
+  gallery: { eyebrow: "Gaallarii", title: "Beeti misilenni." },
+  practice: {
+    eyebrow: "Egenno",
+    title: "Baalanka hasiisanno basora guudde amaale.",
+    sub: "Bayira gadoote layishinni kaise seerete-galtete layishira geeshsha, gaame'nke guudde daafira qixxaawino.",
+    book: "Galtete ganyaancho fadhi",
+  },
+  book: {
+    expectTitle: "Maa agartatto",
+    expectItems: [
+      "Wossenganno seerchoocho la'annoha maaxine adha.",
+      "Mitte loosu barrira mirikkisha hattono kalenderete qokkiisha.",
+      "Hemma, Google Meet, Zoom woy silkeenni doorsha.",
+      "Amaarigna, Ingilizigna, Oromigna, Tigrigna, Arabignanna wolinnino no."
+    ],
+  },
+};
+
+const wal: PageCopy = {
+  home: {
+    stats: [
+      { k: "20+", v: "Layttata oosuwaa" },
+      { k: "1,200+", v: "Oyshshetidobati" },
+      { k: "9", v: "Qaalata oychchidobata" },
+      { k: "24/7", v: "Elle zaaruwaa" },
+    ],
+    pillars: [
+      { title: "Maaraa mootuwaa", desc: "Ubba yohoi bolla pirdda keettan pirddettiya mala giigettidi ha'aa." },
+      { title: "Xuura zoriyaa", desc: "Woosata keettatinne asaa maccati koyiya xuuratettaanne aqqiyaa." },
+      { title: "Woosaa cimatettaa", desc: "Ne yohuwaa xeelidi doorettida diccida gaammo qoqqofoi." },
+    ],
+    sec: { values: "01 · Aluwaa", expertise: "02 · Eratettaa", firm: "03 · Woosaa", counsel: "04 · Higgiyaa Cimata", voices: "05 · Cenggurssa" },
+    aboutBody: "Ambeli Jeylan Higgiyaa Woosay Addis Abaaban de'iya kumetta oosuwaa woosa; maaraa mootuwaanne likke zoriyay issippe de'iyoogaa ammanuwan kaa'ettida. Alamiya woosata, Toophiyaa woosatanne asaa maccata biittaa ubbaa keehin koshshiya yohotun leemisoos." ,
+    aboutBullets: [
+      "9 qaalatun — Amaarattuwaa, Oromiffaa, Tigriññatuwaa, Arabbaa — asaa maccata oychchees.",
+      "Ubba yohuwaassi giigida gaammo qoqqofoi.",
+      "Bankkoti, aqiyaa immiyaageetinne aawatettaa keettati ammaniyo zoriyaa." ,
+    ],
+    readStory: "Nu yohuwaa nabbabbite",
+    managingPartner: "Kaaletiyaa Meccaa",
+    viewAllAreas: "Ubbaa be'ite",
+    meetTeam: "Kumettaa gaammo gakkite",
+  },
+  about: {
+    eyebrow: "Woosaabaa",
+    title: "Ha'i wode Toophiyaa higgiyaa woosay, ayfe kaalliyaagaassi giigettida.",
+    storyTitle: "Nu yohuwaa",
+    storyBody: "Ambeli Jeylan Higgiyaa Woosay eesuwan ha'i wodiyaa gakkanaassi giigiya Toophiyaa daanabaanttaassi alamiyaa mala higgiyaa oosuwaa ehanaassi doomettida.",
+    missionTitle: "Halchuwaa",
+    missionBody: "Nuuni oychchiyo ubba asaassi qonccissiya, xala'iyaanne higgiyan xaphida ayfe kaalliya zoriyaa immanawu.",
+    visionTitle: "Xoossaa qofaa",
+    visionBody: "Afriikan Waanaa woosa gidanawu — Toophiyaa asaikka alamiyaa asaikka ayfiyaa naagiyo wode simmiyo woosa.",
+    valuesTitle: "Waanna aluwaa",
+    values: [
+      "Zal'iyaa qofaappe bolla ammantetta.",
+      "Bessuwaappe bolla giigettidi ha'aa.",
+      "Ubba asa aggenna gaytettan xuuratettaa.",
+      "Waana keehatetta ayfe kaalletiyaagan qooddettees, saatiyan miishiyan gidenna."
+    ],
+    membershipsTitle: "Yara gididoogaanne paramata",
+    memberships: [
+      "Toophiyaa Federaale Bolla Pirdda Keettaa",
+      "Toophiyaa Higgiyaa Cimata Woosaa",
+      "Toophiyaa Sigettuwaanne Sooretiyaa Waagaa",
+      "Alamiyaa Higgiyaa Cimata Woosaa",
+      "Afriika Zal'iyaa Higgiyaa Networkiyaa",
+      "ICC Alamiyaa Sigettuwaa Pirdda Keettaa"
+    ],
+    speak: "Meccan haasayite",
+    partnerRole: "Kaaletiyaa Meccaa",
+    partnerBio: "Naa'u tammu layttay Toophiyaa pirdda keettata ubba xeeraaninne alamiyaa sigettuwaa pirdda keettatun woosatanne keettata leemisiis." ,
+  },
+  lawyers: {
+    eyebrow: "Higgiyaa Cimata",
+    title: "Woosaappe guyyeera de'iya higgiyaa cimata.",
+    sub: "Eratettan, muleera de'iya oosuwaaninne bessida ayfe kaallidoogaa gaason doorettida cima meccatinne mata cimata.",
+    focus: "Xeellay",
+    languages: "Qaalata",
+    bookWith: "{name} gaara qofa oychite →",
+  },
+  contact: {
+    title: "Neeni giigettido wode nuunikka giigettidoogaa.",
+    sub: "Xuuraa oyshshati mokkettoosona. Issi oosuwaa gallassan zaaroos.",
+    whatsappDesc: "Ne biradhdhaappe haasayaa doommite.",
+    mapTitle: "Woosaa sohuwaa",
+  },
+  careers: {
+    eyebrow: "Oosuwaa Ogiyaa",
+    title: "Higgiyaa cimata woosakko yiite.",
+    sub: "Eratettay, muleera de'iya oosoinne keehatettaassi qaalaa gelida cimata koyoos.",
+    apply: "Oychite",
+    roles: [
+      { role: "Bolla Aylletiya — Zal'iyaa", loc: "Addis Abaaba" },
+      { role: "Aylletiya — Pirdda Yohuwaa", loc: "Addis Abaaba" },
+      { role: "Higgiyaa Tamaaree", loc: "Addis Abaaba" },
+    ],
+  },
+  faqs: {
+    eyebrow: "Zaaruwaa",
+    title: "Ubba wode oychchettiya oyshshata.",
+    items: [
+      { q: "Amaarattuwaaninne hara Toophiyaa qaalatun zoriyaa immeetii?", a: "Ee. Nu higgiyaa cimati Amaarattuwaan, Oromiffan, Tigriññatuwan, Somaalettuwan, Afaarettuwan, Sidaamatuwan, Wolayttattuwan, Arabbaaninne Ingilizattuwan asaa oyshshoos." },
+      { q: "Ta oyshshaassi awude zaareetii?", a: "Ubba gaara qofaa oyshshaa issi oosuwaa gallassan mintteettees." },
+      { q: "Gaara qofay xuuraa?", a: "Tumatetta. Koyro shiiquwaappe doommidi higgiyaa cimay-asa gidduwan de'iya xuuratettan naagettees." },
+      { q: "Gayttuwaa interneettiyaa baggaara oosettana danddayii?", a: "Ee — Google Meet, Zoom, WhatsApp vidiyuwaa woykko biradhdhaa. Nu Addis Abaaba woosan asatettan gayttuwaakka de'ees." },
+      { q: "Alamiyaa asaa maccata oychcheetii?", a: "Toophiyaaninne heera biittatun oottiya kare biittaa aqiyaa immiyaageeta, alamiyaa woosatanne alamiyaa keettata darotoo leemisoos." },
+      { q: "Miishshaa qanxxoi waatidi giigii?", a: "Yohuwaa qoodan saatiyan, oosuwaa halchuwaaninne genciyaa maachchan oottoos." },
+    ],
+  },
+  articles: {
+    eyebrow: "Xeelaa",
+    title: "Higgiyaa xaafetidabatinne pilggetta.",
+    sub: "Toophiyaa higgiyaanne zal'iyaa laammiya darotta xeellidi nu higgiyaa cimati immiyo qofaa.",
+    readMore: "Gujji nabbabbite →",
+    body: "Toophiyan oottiya woosatussi ayfe kaalliya wolqqaa qonccissiya qanttaa qofa.",
+    items: [
+      { t: "Toophiyaa ooratta Aqiyaa Higgee: kare biittaa aqiyaa immiyaageetuyyo aiba laammii?", c: "Aqiyaa" },
+      { t: "Kare biittaa Sigettuwaa kuushshaa Toophiyan oosuwaa oottissiyoogaa", c: "Sigettuwaa" },
+      { t: "Ooraxida Zal'iyaa Higgiyaa akeekiyoogaa", c: "Zal'iyaa" },
+      { t: "Toophiyaa miishshaa woosatuyyo daataa naagiyo aawatettaa", c: "Bankke" },
+      { t: "Oosuwaa laamettaanne oosanchatu bolli de'iya wolqqay", c: "Oosuwaa" },
+      { t: "Afriikan Waanaa zal'iyaa malaataa oosuwaa oottissiyo maaraatuwa", c: "IP" },
+    ],
+  },
+  gallery: { eyebrow: "Gaallarii", title: "Woosay misileta baggaara." },
+  practice: {
+    eyebrow: "Eratettaa",
+    title: "Keehin koshshiya ubba shoobiyan kumetta zoriyaa.",
+    sub: "Gita zal'iyaa gayttotettaappe doommidi higgiyaa suure pirddaa yohuwaa gakkanaassi, nu gaammoi ayfe kaalletiyaagaa xeellidi giigees, silo giigenna.",
+    book: "Gaara qofa oychchite",
+  },
+  book: {
+    expectTitle: "Ai naagana bessiyaakko",
+    expectItems: [
+      "Bolla higgiyaa meccay xeellana xuuraa mokkuwaa.",
+      "Issi oosuwaa gallassan minttuwaanne kalendariyaa shoobbiyaa.",
+      "Asatettan, Google Meet, Zoom woykko biradhdhaan doori.",
+      "Amaarattuwaa, Ingilizattuwaa, Oromiffaa, Tigriññatuwaa, Arabbaanne haratun de'ees."
+    ],
+  },
+};
+
 const DICTS: Record<LangCode, PageCopy> = {
   en,
   am,
   ti,
   om,
   so,
-  aa: en,
-  sid: en,
-  wal: en,
+  aa,
+  sid,
+  wal,
   ar,
 };
+
 
 export function usePageCopy(): PageCopy {
   const { lang } = useI18n();
