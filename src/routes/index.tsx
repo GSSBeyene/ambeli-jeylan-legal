@@ -5,6 +5,7 @@ import { LAWYERS, TESTIMONIALS } from "@/lib/site-data";
 import { usePracticeAreas } from "@/lib/practice-areas-i18n";
 import heroImage from "@/assets/hero-law.jpg";
 import aboutImage from "@/assets/about-signing.jpg";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 
