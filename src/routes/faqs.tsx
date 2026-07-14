@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "./about";
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const FAQS = [
+// English fallback used for JSON-LD (server-side head, no hook available)
+const FAQ_EN = [
   { q: "Do you offer consultations in Amharic and other Ethiopian languages?", a: "Yes. Our lawyers serve clients in Amharic, Oromo, Tigrinya, Somali, Afar, Sidama, Wolaytta, Arabic and English." },
   { q: "How quickly will you respond to my request?", a: "We confirm every consultation request within one business day." },
   { q: "Are consultations confidential?", a: "Absolutely. Every enquiry is protected by lawyer-client privilege from first contact." },
@@ -23,19 +25,24 @@ export const Route = createFileRoute("/faqs")({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: FAQS.map((f) => ({
+        mainEntity: FAQ_EN.map((f) => ({
           "@type": "Question", name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
       }),
     }],
   }),
-  component: () => (
+  component: FaqsPage,
+});
+
+function FaqsPage() {
+  const c = usePageCopy().faqs;
+  return (
     <>
-      <PageHeader eyebrow="Answers" title="Frequently asked questions." />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} />
       <section className="container-page py-16 max-w-3xl">
         <Accordion type="single" collapsible className="w-full">
-          {FAQS.map((f, i) => (
+          {c.items.map((f, i) => (
             <AccordionItem key={i} value={`item-${i}`}>
               <AccordionTrigger className="font-serif text-left text-lg">{f.q}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
@@ -44,5 +51,5 @@ export const Route = createFileRoute("/faqs")({
         </Accordion>
       </section>
     </>
-  ),
-});
+  );
+}
