@@ -20,6 +20,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   const { t } = useI18n();
   const practiceAreas = usePracticeAreas();
+  const c = usePageCopy().home;
   return (
     <>
       {/* HERO */}
