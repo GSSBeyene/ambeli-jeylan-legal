@@ -169,7 +169,7 @@ function Home() {
       <section className="bg-navy-deep text-primary-foreground py-24">
         <div className="container-page">
           <div className="max-w-xl">
-            <div className="text-xs uppercase tracking-[0.28em] text-accent">04 · Counsel</div>
+            <div className="text-xs uppercase tracking-[0.28em] text-accent">{c.sec.counsel}</div>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl">{t("section.lawyers")}</h2>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
