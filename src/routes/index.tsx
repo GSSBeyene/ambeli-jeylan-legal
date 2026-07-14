@@ -133,18 +133,11 @@ function Home() {
       <section className="container-page py-24">
         <div className="grid gap-16 lg:grid-cols-2 items-center">
           <div>
-            <div className="text-xs uppercase tracking-[0.28em] text-accent">03 · The Firm</div>
+            <div className="text-xs uppercase tracking-[0.28em] text-accent">{c.sec.firm}</div>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl">{t("section.about")}</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Ambeli Jeylan Law Office is an Addis Ababa-based full-service firm founded on
-              the belief that principled advocacy and precise counsel are inseparable. We
-              represent multinational enterprises, Ethiopian institutions, and private
-              clients across the country's most consequential matters.
-            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">{c.aboutBody}</p>
             <ul className="mt-8 grid gap-4 text-sm">
-              {["Serving clients in 9 languages including Amharic, Oromo, Tigrinya and Arabic.",
-                "Cross-disciplinary teams built around each matter.",
-                "Trusted counsel to banks, investors, and public institutions."].map((x) => (
+              {c.aboutBullets.map((x) => (
                 <li key={x} className="flex gap-3">
                   <Sparkles className="h-4 w-4 text-accent shrink-0 mt-1" />
                   <span className="text-foreground/80">{x}</span>
@@ -152,7 +145,7 @@ function Home() {
               ))}
             </ul>
             <Link to="/about" className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-accent">
-              Read our story <ArrowRight className="h-4 w-4" />
+              {c.readStory} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="relative">
