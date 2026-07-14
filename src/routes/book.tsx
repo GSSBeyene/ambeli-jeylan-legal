@@ -30,6 +30,7 @@ const schema = z.object({
 
 function BookPage() {
   const { t } = useI18n();
+  const expect = usePageCopy().book;
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 
