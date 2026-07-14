@@ -197,7 +197,7 @@ function Home() {
       {/* TESTIMONIALS */}
       <section className="container-page py-24">
         <div className="max-w-xl">
-          <div className="text-xs uppercase tracking-[0.28em] text-accent">05 · Voices</div>
+          <div className="text-xs uppercase tracking-[0.28em] text-accent">{c.sec.voices}</div>
           <h2 className="mt-3 font-serif text-3xl md:text-4xl">{t("section.testimonials")}</h2>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
