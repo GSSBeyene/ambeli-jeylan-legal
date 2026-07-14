@@ -158,7 +158,7 @@ function Home() {
             <div className="absolute -bottom-6 -left-6 hidden md:block bg-navy text-primary-foreground p-6 max-w-xs">
               <div className="font-serif text-xl text-accent">Ambeli Jeylan</div>
               <div className="text-xs uppercase tracking-[0.18em] text-primary-foreground/70 mt-1">
-                Managing Partner
+                {c.managingPartner}
               </div>
             </div>
           </div>
