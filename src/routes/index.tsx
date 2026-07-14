@@ -188,7 +188,7 @@ function Home() {
           </div>
           <div className="mt-10">
             <Link to="/lawyers" className="text-sm text-accent inline-flex items-center gap-2 hover:brightness-110">
-              Meet the full team <ArrowRight className="h-4 w-4" />
+              {c.meetTeam} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
