@@ -104,12 +104,12 @@ function Home() {
         <div className="container-page">
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-xl">
-              <div className="text-xs uppercase tracking-[0.28em] text-accent">02 · Expertise</div>
+              <div className="text-xs uppercase tracking-[0.28em] text-accent">{c.sec.expertise}</div>
               <h2 className="mt-3 font-serif text-3xl md:text-4xl">{t("section.practice")}</h2>
               <p className="mt-3 text-muted-foreground">{t("section.practice.sub")}</p>
             </div>
             <Link to="/practice-areas" className="text-sm text-navy hover:text-accent inline-flex items-center gap-2">
-              View all areas <ArrowRight className="h-4 w-4" />
+              {c.viewAllAreas} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
