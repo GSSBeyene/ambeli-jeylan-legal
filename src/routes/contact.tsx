@@ -5,6 +5,7 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { PageHeader } from "./about";
 import { Mail, MapPin, Phone, Clock, Siren } from "lucide-react";
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 
 export const Route = createFileRoute("/contact")({
   head: ({ match }) => ({
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const { t } = useI18n();
+  const c = usePageCopy().contact;
   const items = [
     { icon: MapPin, label: t("contact.address"), value: CONTACT.address },
     { icon: Phone, label: t("contact.phone"), value: CONTACT.phone },
@@ -25,7 +27,7 @@ function ContactPage() {
   ];
   return (
     <>
-      <PageHeader eyebrow={t("contact.title")} title="We are ready when you are." sub="Confidential enquiries welcomed. We respond within one business day." />
+      <PageHeader eyebrow={t("contact.title")} title={c.title} sub={c.sub} />
       <section className="container-page py-16 grid gap-12 lg:grid-cols-2">
         <div>
           <ul className="grid gap-6">
@@ -44,7 +46,7 @@ function ContactPage() {
 
           <div className="mt-10">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">WhatsApp</div>
-            <p className="mt-2 text-sm text-muted-foreground">Start a chat directly from your phone.</p>
+            <p className="mt-2 text-sm text-muted-foreground">{c.whatsappDesc}</p>
             <div className="mt-4 flex flex-wrap gap-3">
               {CONTACT.phones.map((p) => (
                 <WhatsAppButton key={p} phone={p} />
@@ -54,7 +56,7 @@ function ContactPage() {
         </div>
         <div className="rounded-sm overflow-hidden border border-border aspect-[4/3]">
           <iframe
-            title="Office location"
+            title={c.mapTitle}
             src="https://www.openstreetmap.org/export/embed.html?bbox=38.75%2C8.98%2C38.82%2C9.03&layer=mapnik"
             className="w-full h-full"
             loading="lazy"

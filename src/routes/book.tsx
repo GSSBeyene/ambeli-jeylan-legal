@@ -7,6 +7,7 @@ import { useI18n } from "@/lib/i18n";
 import { PRACTICE_AREAS, LAWYERS, APPOINTMENT_TIMES } from "@/lib/site-data";
 import { PageHeader } from "./about";
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 
 export const Route = createFileRoute("/book")({
   head: ({ match }) => ({
@@ -29,6 +30,7 @@ const schema = z.object({
 
 function BookPage() {
   const { t } = useI18n();
+  const expect = usePageCopy().book;
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 
@@ -117,12 +119,11 @@ function BookPage() {
           </form>
 
           <aside className="rounded-sm border border-border p-8 bg-secondary/40 h-fit">
-            <h3 className="font-serif text-xl text-navy">What to expect</h3>
+            <h3 className="font-serif text-xl text-navy">{expect.expectTitle}</h3>
             <ul className="mt-4 grid gap-3 text-sm text-foreground/80">
-              <li>· Confidential intake reviewed by a senior lawyer.</li>
-              <li>· Confirmation and calendar invite within one business day.</li>
-              <li>· Option of in-person, Google Meet, Zoom or phone consultation.</li>
-              <li>· Available in Amharic, English, Oromo, Tigrinya, Arabic and more.</li>
+              {expect.expectItems.map((x) => (
+                <li key={x}>· {x}</li>
+              ))}
             </ul>
           </aside>
         </div>

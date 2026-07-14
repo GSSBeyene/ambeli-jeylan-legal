@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { LAWYERS } from "@/lib/site-data";
 import { PageHeader } from "./about";
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 
 export const Route = createFileRoute("/lawyers")({
   head: ({ match }) => ({
@@ -12,9 +13,10 @@ export const Route = createFileRoute("/lawyers")({
 });
 
 function LawyersPage() {
+  const c = usePageCopy().lawyers;
   return (
     <>
-      <PageHeader eyebrow="Counsel" title="The lawyers behind the firm." sub="Senior partners and associates chosen for judgment, discipline and demonstrated results." />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} sub={c.sub} />
       <section className="container-page py-16">
         <div className="grid gap-10 md:grid-cols-2">
           {LAWYERS.map((l) => (
@@ -29,11 +31,11 @@ function LawyersPage() {
                 <div className="text-xs uppercase tracking-[0.2em] text-accent mt-1">{l.role}</div>
                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{l.bio}</p>
                 <div className="mt-5 grid gap-2 text-xs">
-                  <div><span className="uppercase tracking-[0.18em] text-foreground/60 mr-2">Focus</span>{l.focus.join(" · ")}</div>
-                  <div><span className="uppercase tracking-[0.18em] text-foreground/60 mr-2">Languages</span>{l.languages.join(" · ")}</div>
+                  <div><span className="uppercase tracking-[0.18em] text-foreground/60 mr-2">{c.focus}</span>{l.focus.join(" · ")}</div>
+                  <div><span className="uppercase tracking-[0.18em] text-foreground/60 mr-2">{c.languages}</span>{l.languages.join(" · ")}</div>
                 </div>
                 <Link to="/book" className="mt-6 inline-flex text-sm font-medium text-navy hover:text-accent">
-                  Book with {l.name.split(" ")[0]} →
+                  {c.bookWith.replace("{name}", l.name.split(" ")[0])}
                 </Link>
               </div>
             </article>

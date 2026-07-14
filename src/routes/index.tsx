@@ -5,6 +5,7 @@ import { LAWYERS, TESTIMONIALS } from "@/lib/site-data";
 import { usePracticeAreas } from "@/lib/practice-areas-i18n";
 import heroImage from "@/assets/hero-law.jpg";
 import aboutImage from "@/assets/about-signing.jpg";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
 
@@ -19,6 +20,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   const { t } = useI18n();
   const practiceAreas = usePracticeAreas();
+  const c = usePageCopy().home;
   return (
     <>
       {/* HERO */}
@@ -69,12 +71,7 @@ function Home() {
 
           {/* Stat strip */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-10">
-            {[
-              { k: "20+", v: "Years of practice" },
-              { k: "1,200+", v: "Matters handled" },
-              { k: "9", v: "Languages served" },
-              { k: "24/7", v: "Emergency response" },
-            ].map((s) => (
+            {c.stats.map((s) => (
               <div key={s.v}>
                 <div className="font-serif text-3xl text-accent">{s.k}</div>
                 <div className="mt-1 text-xs uppercase tracking-[0.2em] text-primary-foreground/60">
@@ -89,17 +86,16 @@ function Home() {
       {/* VALUE PILLARS */}
       <section className="container-page py-20">
         <div className="grid gap-8 md:grid-cols-3">
-          {[
-            { icon: ScaleIcon, title: "Principled advocacy", desc: "Every matter is prepared as if it will be tried before the highest court." },
-            { icon: ShieldCheck, title: "Discreet counsel", desc: "Confidentiality and judgment expected by institutions and private clients alike." },
-            { icon: Landmark, title: "Institutional depth", desc: "Cross-disciplinary teams built around your matter, not a single practice silo." },
-          ].map((p) => (
+          {c.pillars.map((p, idx) => {
+            const Icon = [ScaleIcon, ShieldCheck, Landmark][idx] ?? ScaleIcon;
+            return (
             <div key={p.title} className="border-l-2 border-accent pl-6">
-              <p.icon className="h-6 w-6 text-accent" />
+              <Icon className="h-6 w-6 text-accent" />
               <h3 className="mt-4 font-serif text-xl">{p.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -108,12 +104,12 @@ function Home() {
         <div className="container-page">
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div className="max-w-xl">
-              <div className="text-xs uppercase tracking-[0.28em] text-accent">02 · Expertise</div>
+              <div className="text-xs uppercase tracking-[0.28em] text-accent">{c.sec.expertise}</div>
               <h2 className="mt-3 font-serif text-3xl md:text-4xl">{t("section.practice")}</h2>
               <p className="mt-3 text-muted-foreground">{t("section.practice.sub")}</p>
             </div>
             <Link to="/practice-areas" className="text-sm text-navy hover:text-accent inline-flex items-center gap-2">
-              View all areas <ArrowRight className="h-4 w-4" />
+              {c.viewAllAreas} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
@@ -137,18 +133,11 @@ function Home() {
       <section className="container-page py-24">
         <div className="grid gap-16 lg:grid-cols-2 items-center">
           <div>
-            <div className="text-xs uppercase tracking-[0.28em] text-accent">03 · The Firm</div>
+            <div className="text-xs uppercase tracking-[0.28em] text-accent">{c.sec.firm}</div>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl">{t("section.about")}</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Ambeli Jeylan Law Office is an Addis Ababa-based full-service firm founded on
-              the belief that principled advocacy and precise counsel are inseparable. We
-              represent multinational enterprises, Ethiopian institutions, and private
-              clients across the country's most consequential matters.
-            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">{c.aboutBody}</p>
             <ul className="mt-8 grid gap-4 text-sm">
-              {["Serving clients in 9 languages including Amharic, Oromo, Tigrinya and Arabic.",
-                "Cross-disciplinary teams built around each matter.",
-                "Trusted counsel to banks, investors, and public institutions."].map((x) => (
+              {c.aboutBullets.map((x) => (
                 <li key={x} className="flex gap-3">
                   <Sparkles className="h-4 w-4 text-accent shrink-0 mt-1" />
                   <span className="text-foreground/80">{x}</span>
@@ -156,7 +145,7 @@ function Home() {
               ))}
             </ul>
             <Link to="/about" className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-accent">
-              Read our story <ArrowRight className="h-4 w-4" />
+              {c.readStory} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="relative">
@@ -169,7 +158,7 @@ function Home() {
             <div className="absolute -bottom-6 -left-6 hidden md:block bg-navy text-primary-foreground p-6 max-w-xs">
               <div className="font-serif text-xl text-accent">Ambeli Jeylan</div>
               <div className="text-xs uppercase tracking-[0.18em] text-primary-foreground/70 mt-1">
-                Managing Partner
+                {c.managingPartner}
               </div>
             </div>
           </div>
@@ -180,7 +169,7 @@ function Home() {
       <section className="bg-navy-deep text-primary-foreground py-24">
         <div className="container-page">
           <div className="max-w-xl">
-            <div className="text-xs uppercase tracking-[0.28em] text-accent">04 · Counsel</div>
+            <div className="text-xs uppercase tracking-[0.28em] text-accent">{c.sec.counsel}</div>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl">{t("section.lawyers")}</h2>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -199,7 +188,7 @@ function Home() {
           </div>
           <div className="mt-10">
             <Link to="/lawyers" className="text-sm text-accent inline-flex items-center gap-2 hover:brightness-110">
-              Meet the full team <ArrowRight className="h-4 w-4" />
+              {c.meetTeam} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -208,7 +197,7 @@ function Home() {
       {/* TESTIMONIALS */}
       <section className="container-page py-24">
         <div className="max-w-xl">
-          <div className="text-xs uppercase tracking-[0.28em] text-accent">05 · Voices</div>
+          <div className="text-xs uppercase tracking-[0.28em] text-accent">{c.sec.voices}</div>
           <h2 className="mt-3 font-serif text-3xl md:text-4xl">{t("section.testimonials")}</h2>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">

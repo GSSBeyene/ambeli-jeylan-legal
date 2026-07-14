@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { usePracticeAreas } from "@/lib/practice-areas-i18n";
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 import { PageHeader } from "./about";
 
 export const Route = createFileRoute("/practice-areas")({
@@ -13,13 +14,10 @@ export const Route = createFileRoute("/practice-areas")({
 
 function PracticeAreasPage() {
   const practiceAreas = usePracticeAreas();
+  const c = usePageCopy().practice;
   return (
     <>
-      <PageHeader
-        eyebrow="Expertise"
-        title="Comprehensive counsel across every discipline that matters."
-        sub="From high-stakes commercial transactions to constitutional litigation, our teams are organised around outcomes, not silos."
-      />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} sub={c.sub} />
       <section className="container-page py-16">
         <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3 border border-border">
           {practiceAreas.map((a, i) => (
@@ -36,7 +34,7 @@ function PracticeAreasPage() {
         </div>
         <div className="mt-12 flex justify-center">
           <Link to="/book" className="inline-flex items-center gap-2 rounded-sm bg-navy px-6 py-3 text-xs uppercase tracking-[0.18em] text-primary-foreground hover:bg-navy-deep">
-            Book a consultation
+            {c.book}
           </Link>
         </div>
       </section>
