@@ -1,15 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "./about";
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 
 export const Route = createFileRoute("/gallery")({
   head: ({ match }) => ({
     meta: metaForRoute("/gallery", langFromSearch((match as { search?: unknown }).search)),
     links: [{ rel: "canonical", href: "/gallery" }, ...hreflangLinks("/gallery")],
   }),
-  component: () => (
+  component: GalleryPage,
+});
+
+function GalleryPage() {
+  const c = usePageCopy().gallery;
+  return (
     <>
-      <PageHeader eyebrow="Gallery" title="The firm in pictures." />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} />
       <section className="container-page py-16">
         <div className="grid gap-4 md:grid-cols-3">
           {Array.from({ length: 9 }).map((_, i) => (
@@ -20,5 +26,5 @@ export const Route = createFileRoute("/gallery")({
         </div>
       </section>
     </>
-  ),
-});
+  );
+}
