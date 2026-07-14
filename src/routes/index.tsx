@@ -71,12 +71,7 @@ function Home() {
 
           {/* Stat strip */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-10">
-            {[
-              { k: "20+", v: "Years of practice" },
-              { k: "1,200+", v: "Matters handled" },
-              { k: "9", v: "Languages served" },
-              { k: "24/7", v: "Emergency response" },
-            ].map((s) => (
+            {c.stats.map((s) => (
               <div key={s.v}>
                 <div className="font-serif text-3xl text-accent">{s.k}</div>
                 <div className="mt-1 text-xs uppercase tracking-[0.2em] text-primary-foreground/60">
