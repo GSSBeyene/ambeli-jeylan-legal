@@ -7,6 +7,7 @@ import { useI18n } from "@/lib/i18n";
 import { PRACTICE_AREAS, LAWYERS, APPOINTMENT_TIMES } from "@/lib/site-data";
 import { PageHeader } from "./about";
 import { hreflangLinks, langFromSearch, metaForRoute } from "@/lib/seo-i18n";
+import { usePageCopy } from "@/lib/page-copy-i18n";
 
 export const Route = createFileRoute("/book")({
   head: ({ match }) => ({
