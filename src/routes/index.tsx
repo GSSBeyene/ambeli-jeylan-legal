@@ -94,7 +94,8 @@ function Home() {
               <h3 className="mt-4 font-serif text-xl">{p.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
